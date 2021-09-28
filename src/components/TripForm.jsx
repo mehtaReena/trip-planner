@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import { useLocation } from "react-router";
-import Place from './Place'
 import '../styles.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPlaces, updateAddedPlaces, updateTripDetails } from '../redux/actions/action';
+import { fetchPlaces, updateTripDetails } from '../redux/actions/action';
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
@@ -15,7 +14,7 @@ function TripForm(props) {
     let history = useHistory();
     console.log(userDetail)
     let dispatch = useDispatch()
-    const { places, addedPlaces, error } = useSelector((state) => state.places);
+    const { places } = useSelector((state) => state.places);
 
     const inputRef = useRef({});
 
@@ -48,9 +47,7 @@ function TripForm(props) {
 
     }
 
-    const goHome = () => {
-        history.push("/")
-    }
+
 
 
     return (

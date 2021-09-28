@@ -1,15 +1,15 @@
 import firebase from 'firebase'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { database } from '../firebase-config'
+// import { database } from '../firebase-config'
 import { setUser } from '../redux/actions/action';
-import SignIn from '../signin';
+// import SignIn from '../signin';
 
 export default function Home() {
-    let [disabled, setDisabled] = useState(false)
+    // let [disabled, setDisabled] = useState(false)
     let history = useHistory()
     let dispatch = useDispatch()
 
@@ -24,7 +24,7 @@ export default function Home() {
         }
     })
 
-    let loginHandler = async () => {
+   /*  let loginHandler = async () => {
         setDisabled(true)
         try {
             let user = await SignIn()
@@ -39,7 +39,7 @@ export default function Home() {
     function getUserId(email) {
         return email.replaceAll('.', '_')
     }
-    function updateDatabase(user) {
+/*     function updateDatabase(user) {
         let userId = getUserId(user.email)
         database.ref('users/' + userId).set({
             username: user.displayName,
@@ -48,7 +48,7 @@ export default function Home() {
         });
         dispatch(setUser(user.displayName, user.email, user.photoURL))
         setDisabled(false)
-    }
+    } */
     return (
         <div className="home">
             {/* <h1 className = 'app-name'>ChatterBox</h1> */}

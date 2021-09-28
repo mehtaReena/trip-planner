@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTrips,fetchTripSuccess, fetchTripInprogress} from '../redux/actions/action';
+import { fetchTrips} from '../redux/actions/action';
 import { useHistory } from 'react-router';
-import {database} from "../firebase-config";
+// import {database} from "../firebase-config";
 import TripCard from './TripCard';
 function UserProfile(props) {
 
     let history = useHistory()
     let user = useSelector(state => state.user)
     let dispatch = useDispatch();
-    const { trips, loading, error } = useSelector((state) => state.trips);
+    const { trips, loading } = useSelector((state) => state.trips);
     console.log("UserProfile  " , trips)
 
 
